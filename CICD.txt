@@ -1,0 +1,85 @@
+CICD
+
+Complie - new item
+
+No restrict
+
+Git link - my-maven-app
+
+Build step - invoke top level maven - Maven version - Maven(suggestion)
+
+Goal - clean compile
+
+
+
+
+
+Code_review - new item
+
+Copy from - compile
+
+Only change -
+
+Goals -
+
+-P metrics pmd:pmd checkstyle:checkstyle findbugs:findbugs validate
+
+
+
+Post build action - Record compiler warning
+
+Add tools - checkstyle pmd findbugs ( add 3 times seperately)
+
+
+
+test - new item
+
+Copy from - compile
+
+Goals - test validate
+
+
+
+Publish html reports - just add
+
+
+
+Publish junit test result report
+
+Test report XMLs -
+
+target/surefire-reports/*xml
+
+
+
+Terminal -
+
+git clone mavengitlink ...
+
+
+
+
+
+install/deploy - new item (copy from complie)
+
+Goals - install package
+
+Execute shell - type
+
+cd target
+
+Java -jar my-app-1.0-SNAPSHOT.jar
+
+
+
++ New view - give pipeline - build pipeline view
+
+Upstream/downstream config -
+
+Select initial job - select compile file
+
+Go back side - go to next project - code_review
+
+- build triggers - build after other projects - give previous project name(compile)
+
+- do same steps until install , run

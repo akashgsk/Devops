@@ -1,0 +1,134 @@
+Master-Slave + Docker 
+
+Master
+
+ip a / if config
+
+Local host 8080
+
+
+
+Manag Jenkins - configure global security - agents - fixed - 9000 - save
+
+
+
+Manage nodes and clouds - new node - node name - Ubuntu_4040_server - permanent agent - create
+
+
+
+-Number of executors - 2(no of slaves)
+
+- remote directory - /home/msis/Jenkins (slave node path)
+
+- Launch method - connecting it to controller (2nd option)
+
+
+
+
+
+Manage Jenkins - configure sys - Jenkins URL - master ip - https://172.16.51.xx:8080/
+
+
+
+In slave
+
+Hit master node ip a (Jenkins) - login
+
+Username : jenkins
+
+Pass : jenkins@123
+
+
+
+In terminal -
+
+Manage Jenkins -  configure nodes - ubuntu_server
+
+run curl command - change localhost to ipadress of host(optional)
+
+sudo + Java command
+
+
+
+StandAlone basic php using Jenkins
+
+Master -
+
+Copy basic php web GitHub link
+
+New item - freestyle project
+
+Git - Git repo link paste
+
+Restrict - Ububtu_4040_server(any name)
+
+Build setup - Execute shell - jenkins_deploy.sh - copy/paste
+
+
+
+Build now
+
+
+
+Slave - localhost:80/
+
+
+
+
+
+USING Docker
+
+Docker acc - login
+
+Repo - create repo - akash - public - create
+
+
+
+Manage Jenkins - manage credentials - system - global credentials - add c - username/pass of docker
+
+ID - dockerdemo
+
+
+
+Jenkins - new item - style
+
+Restrict - Ubuntu_123_server
+
+Git - git repo link - ecommerce
+
+Credentials - saved
+
+Build step - docker build and publish
+
+Repo name - username/projname(name as created in docker)
+
+Tag- v2
+
+Registery cred - saved cred
+
+Build
+
+In docker - refresh  - show image (push)
+
+
+
+For pull-
+
+Build step - execute shell -
+
+sudo docker run --name basicpic(anyname) -it -d -p 4009:80 akashgsk/xyz:v2
+
+
+
+Slave -
+
+Browser - localhost:4009(any)
+
+
+
+
+
+
+
+
+

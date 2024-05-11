@@ -1,0 +1,66 @@
+Kubernetes
+
+No restrict
+
+Git - basic php website
+
+branch - master
+
+Build step - deploy to kubernetes -
+
+Kube config -
+
+Manage Jenkins - manage credentials - global - new/add credentials - kinds - kubernetes config... - Kube config - Enter directly - paste code in content
+
+
+
+
+
+Terminal:
+
+ssh chefserver@172.16.51.53
+
+Pass: chef@123
+
+sudo vi ~/.kube/config
+
+Copy before ==, == to == into content
+
+
+
+
+
+kube config - kube_key - ID
+
+config file - php websides 2 yaml file
+
+
+
+
+
+Terminal -
+
+sudo kubectl get pods
+
+sudo kubectl get svc
+
+sudo kubectl describe pods
+
+
+
+Browser -
+
+172.16.53:8080 - It works
+
+172.16.51.51 -   check Node: ide
+
+- describe pods command
+
+80:32098/TCP      - bookalbum:
+
+- svc command
+
+--> 172.16.51.51:32098/index.php
+
+
+
